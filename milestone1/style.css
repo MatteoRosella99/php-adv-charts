@@ -1,0 +1,9 @@
+.container{
+  width: 60%;
+  margin: auto;
+  padding-top: 70px;
+  text-align: center;
+}
+.container p{
+  font-size: 22px;
+}
