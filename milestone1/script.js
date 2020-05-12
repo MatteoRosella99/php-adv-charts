@@ -1,7 +1,7 @@
 $(document).ready(function () {
   var ctx = document.getElementById('line').getContext('2d');
   $.ajax({
-    url: 'database.php',
+    url: 'server.php',
     method: 'GET',
     success: function success(data) {
       var mesi = data.mesi;
