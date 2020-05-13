@@ -6,14 +6,13 @@ $(document).ready(function () {
     method: 'GET',
     success: function success(data) {
       var mesi = data.mesi;
-      console.log(mesi);
       var myChart = new Chart(ctx, {
-          type: data.fatturato.type,
+          type: data.type,
           data: {
               labels: mesi,
               datasets: [{
                   label: '# of Votes',
-                  data: data.fatturato.data,
+                  data: data.data,
                   backgroundColor: [
                       'rgba(219, 193, 193, 0.8)',
                   ],
@@ -44,20 +43,13 @@ $(document).ready(function () {
               }
           }
       });
-      var valori = [
-        data.fatturato_by_agent.data.Marco,
-        data.fatturato_by_agent.data.Giuseppe,
-        data.fatturato_by_agent.data.Mattia,
-        data.fatturato_by_agent.data.Alberto
-        ]
-      console.log(valori);
-      var myChart = new Chart(fetta, {
-          type: data.fatturato_by_agent.type,
+      var myChart2 = new Chart(fetta, {
+          type: data.fba.type,
           data: {
-              labels: ['Marco', 'Giuseppe', 'Mattia', 'Alberto'],
+              labels: data.fba.labels,
               datasets: [{
                   label: '# of Votes',
-                  data: valori,
+                  data: data.fba.dati,
                   backgroundColor: [
                       'rgba(9, 72, 173, 0.9)',
                       'rgba(173, 9, 148, 0.9)',
